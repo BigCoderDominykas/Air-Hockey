@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    //private GameObject playerScore, enemyScore;
     public TMP_Text playerScore, enemyScore;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.name.Contains("Player") || collision.gameObject.name.Contains("Enemy"))
+            GetComponent<AudioSource>().Play();
+
         if(collision.gameObject.name.Contains("Goal"))
         {
             transform.position = Vector3.zero;
