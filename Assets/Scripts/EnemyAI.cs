@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
         if (ballInRange)
         {
             // attack
-            targetPosition = ball.position;
+            targetPosition = ball.position + defensePointOffset / 5f;
             speed = attackSpeed;
         }
         else
